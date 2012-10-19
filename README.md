@@ -9,7 +9,16 @@ It's based on a PHP Markdown implementation by [Michel Fortin](http://www.michel
 Installation
 ------------
 
- * Copy .htaccess to your root, or update your httpd.conf file with its contents, if you prefer.
  * Copy the markdown directory into your webroot.
+ * Copy .htaccess to your root.
 
-Now visit a .md file on your webserver; you should see it as properly styled HTML.
+Alternatively
+
+ * Copy the markdown directory to a shared directory like /usr/local/share.
+ * Add the following code to your apache config
+
+    Alias _markdown /usr/local/share/markdown
+    Action markdown /_markdown/handler.php
+    AddHandler markdown .md .markdown
+
+Now visit a .md file on your webserver; you should see it as properly styled HTML :).
