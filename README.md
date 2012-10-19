@@ -19,6 +19,7 @@ Alternatively
  * Copy the markdown directory to a shared directory like /usr/local/share.
  * Add the following code to your apache config
 
+--
     Alias _markdown /usr/local/share/markdown
     Action markdown /_markdown/handler.php
     AddHandler markdown .md .markdown
